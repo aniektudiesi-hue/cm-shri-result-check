@@ -6,7 +6,13 @@ const checkedAt = document.querySelector("#checked-at");
 const message = document.querySelector("#message");
 const pulse = document.querySelector("#pulse");
 const subscribersList = document.querySelector("#subscribers");
+const checkingScreen = document.querySelector("#checking-screen");
+const announcedScreen = document.querySelector("#announced-screen");
+const checkNow = document.querySelector("#check-now");
+const resultUrl = "https://www.edudel.nic.in/cmshriapp/home.aspx";
 let socket;
+
+checkNow.href = resultUrl;
 
 connect();
 
@@ -60,6 +66,10 @@ function connect() {
     if (data.type === "count") {
       count.textContent = data.count >= 5 ? "Ready" : "Checking";
       checkedAt.textContent = new Date(data.checkedAt).toLocaleTimeString();
+
+      if (data.count >= 5) {
+        showAnnouncedScreen();
+      }
 
       if (data.alert?.sent) {
         setMessage("Result alert email sent.");
@@ -125,4 +135,10 @@ function renderSubscribers(subscribers = []) {
     item.textContent = email;
     subscribersList.append(item);
   }
+}
+
+function showAnnouncedScreen() {
+  checkingScreen.hidden = true;
+  announcedScreen.hidden = false;
+  document.title = "Results Are Announced";
 }

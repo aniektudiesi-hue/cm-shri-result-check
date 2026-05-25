@@ -124,6 +124,37 @@ button:hover {
   background: var(--accent-dark);
 }
 
+.check-now {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  margin-top: 34px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 800;
+  padding: 0 26px;
+  text-decoration: none;
+}
+
+.check-now:hover {
+  background: var(--accent-dark);
+}
+
+.announced-screen {
+  text-align: left;
+}
+
+.announced-screen h1 {
+  color: #105d4b;
+}
+
+.result-ready-note {
+  color: var(--accent-dark);
+  font-weight: 700;
+}
+
 .status-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

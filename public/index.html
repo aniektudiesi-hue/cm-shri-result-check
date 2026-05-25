@@ -8,7 +8,7 @@
   </head>
   <body>
     <main class="shell">
-      <section class="watcher" aria-labelledby="page-title">
+      <section class="watcher" id="checking-screen" aria-labelledby="page-title">
         <div class="intro">
           <h1 id="page-title">CM SHRI Result Check</h1>
           <p>
@@ -55,6 +55,24 @@
           <h2 id="subscriber-title">Notification Emails</h2>
           <ul id="subscribers"></ul>
         </section>
+      </section>
+
+      <section class="watcher announced-screen" id="announced-screen" aria-labelledby="announced-title" hidden>
+        <div class="intro">
+          <h1 id="announced-title">Results Are Announced</h1>
+          <p>
+            The official CM SHRI result page appears to be ready. Open the Edudel site now to check your result.
+          </p>
+        </div>
+
+        <a class="check-now" id="check-now" href="https://www.edudel.nic.in/cmshriapp/home.aspx">
+          Check Now
+        </a>
+
+        <div class="activity result-ready-note">
+          <div class="pulse" aria-hidden="true"></div>
+          <p>Email alerts have been sent to the notification list.</p>
+        </div>
       </section>
     </main>
 
