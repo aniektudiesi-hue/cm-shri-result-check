@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: cm-shri-result-check
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: 24
+      - key: SMTP_HOST
+        value: smtp.gmail.com
+      - key: SMTP_PORT
+        value: "465"
+      - key: SMTP_SECURE
+        value: "true"
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: SMTP_FROM
+        sync: false
+      - key: ALERT_EMAIL_TO
+        sync: false
+      - key: ALERT_COUNT
+        value: "5"
+      - key: DATA_DIR
+        value: /var/data
+    disk:
+      name: cm-shri-result-data
+      mountPath: /var/data
+      sizeGB: 1

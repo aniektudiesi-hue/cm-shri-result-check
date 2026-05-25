@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal Paragraph Watcher</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="watcher" aria-labelledby="page-title">
+        <div class="intro">
+          <h1 id="page-title">CM SHRI Result Check</h1>
+          <p>
+            Add your email to get an alert when the official result page is ready.
+          </p>
+        </div>
+
+        <form class="url-form" id="email-form">
+          <label for="email">Email address</label>
+          <div class="field-row">
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            />
+            <button type="submit">Notify Me</button>
+          </div>
+        </form>
+
+        <div class="status-grid" aria-live="polite">
+          <article class="metric">
+            <span class="metric-label">Status</span>
+            <strong id="count">Checking</strong>
+          </article>
+          <article class="metric">
+            <span class="metric-label">Connection</span>
+            <strong id="connection">Connecting</strong>
+          </article>
+          <article class="metric">
+            <span class="metric-label">Last Check</span>
+            <strong id="checked-at">Never</strong>
+          </article>
+        </div>
+
+        <div class="activity">
+          <div class="pulse" id="pulse" aria-hidden="true"></div>
+          <p id="message">Checking result in the background...</p>
+        </div>
+
+        <section class="subscriber-list" aria-labelledby="subscriber-title">
+          <h2 id="subscriber-title">Notification Emails</h2>
+          <ul id="subscribers"></ul>
+        </section>
+      </section>
+    </main>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
